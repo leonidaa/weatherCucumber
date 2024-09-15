@@ -32,14 +32,12 @@ public class BrowserDriver {
             throw new IllegalArgumentException("Browser not supported: " + browser);
         }
         driver.get("https://openweathermap.org/");
+
     }
 
     public void close() {
         if (driver != null) {
             driver.close();
         }
-    }
-    public WebElement findElement(By by) {
-        return driver.findElement(by);
     }
 }
