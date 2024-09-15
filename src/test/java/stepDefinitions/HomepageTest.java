@@ -41,4 +41,5 @@ public class HomepageTest {
     public void user_click_on_search_button() {
         driver.findElement(By.xpath("/html/body/main/div[3]/div[2]/div/div/div[2]/div[1]/button")).click();
     }
+
 }
