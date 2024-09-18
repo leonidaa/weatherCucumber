@@ -2,7 +2,7 @@ Feature: page search for the correct placeholder
     Scenario: Verify the main page's search field contains correct placeholder text
         Given User open weather homepage
         When User find search field box
-        Then User should see correct placeholder in search field
+        Then User should see correct placeholder in search field "Weather in your city"
     Scenario: Search for city Sydney,Verify the corrected selected searched city(Sydney,AU), date and time
         Given User open weather homepage
         When User enter Syndey in searched field

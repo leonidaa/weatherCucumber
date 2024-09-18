@@ -23,11 +23,11 @@ public class HomepageTest {
         webElement = driver.findElement(By.xpath("//*[@id=\"desktop-menu\"]/form/input[1]"));
     }
 
-    @Then("User should see correct placeholder in search field")
-    public void user_should_see_correct_placeholder() {
+    @Then("User should see correct placeholder in search field {string}")
+    public void user_should_see_correct_placeholder(String text_actual) {
         String text;
         text = webElement.getAttribute("placeholder");
-        assertEquals(text, "Weather in your city");
+        assertEquals(text, text_actual);
         driver.close();
     }
 

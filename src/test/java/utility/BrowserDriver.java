@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-
+import org.openqa.selenium.firefox.FirefoxProfile;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -29,8 +29,19 @@ public class BrowserDriver {
                     "/src/test/resources/drivers/geckodriver");
             optionsFF = new FirefoxOptions();
             optionsFF.setBinary("/opt/firefox/firefox");
+            // Provide the path to the existing Firefox profile
+            //String profilePath = "/path/to/firefox/profile";
+            String profilePath = "/home/adrian/.mozilla/firefox/a04rox3h.default-release-1";
 
-            driver = new FirefoxDriver(optionsFF);
+            // Load the Firefox profile from the specified path
+            FirefoxProfile profile = new FirefoxProfile(new File(profilePath));
+
+            // Set up FirefoxOptions and add the profile to it
+            optionsFF.setProfile(profile);
+
+
+
+                driver = new FirefoxDriver(optionsFF);
         } else if (browser.equalsIgnoreCase("chrome")) {
             // Setup ChromeDriver
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") +
