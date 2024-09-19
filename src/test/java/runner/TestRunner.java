@@ -10,5 +10,6 @@ import org.junit.runner.RunWith;
         glue = {"stepDefinitions", "utility"},
         plugin = {"pretty", "html:target/cucumber-html-report", "json:cucumber.json", "junit:target/cucumber-junit-report.xml"}
 )
+//@Test
 public class TestRunner {
 }

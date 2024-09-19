@@ -15,6 +15,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.List;
 import java.util.Set;
 
 public class BrowserDriver {
@@ -106,5 +107,12 @@ public class BrowserDriver {
     // Expose the WebDriver's findElement method through BrowserDriver
     public WebElement findElement(By by) {
         return driver.findElement(by);
+    }
+
+    public static WebDriver getDriver() {
+        return driver;
+    }
+    public List<WebElement> findElements(By by){
+        return driver.findElements(by);
     }
 }
